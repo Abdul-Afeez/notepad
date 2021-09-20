@@ -66,7 +66,8 @@ ROOT_URLCONF = 'Notepad.urls'
 CORS_ORIGIN_WHITELIST = (
     'http://0.0.0.0:3000',
     'http://localhost:3000',
-    'http://localhost:8000'
+    'http://localhost:8000',
+    'http://18.118.112.37'
 )
 
 TEMPLATES = [
