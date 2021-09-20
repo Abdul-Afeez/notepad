@@ -2,7 +2,20 @@ version: '3'
 
 services:
 
-  #api Service
+  note_db:
+    image: mysql:5.7.22
+    tty: true
+    volumes:
+      - note_data:/var/lib/mysql
+      - ./mysql/my.cnf:/etc/mysql/my.cnf
+    ports:
+      - '3306:3306'
+    environment:
+      MYSQL_DATABASE: 'note'
+      MYSQL_ROOT_PASSWORD: '123456'
+      SERVICE_TAGS: dev
+      SERVICE_NAME: note_db
+
   api:
     image: api:latest
     deploy:
@@ -10,11 +23,17 @@ services:
         condition: any
     ports:
       - 8000:8000
+    depends_on:
+      - note_db
 
-  note_db:
+  web:
     deploy:
       restart_policy:
         condition: any
     image: web:latest
     ports:
       - 80:80
+
+#Volumes
+volumes:
+  note_data:
