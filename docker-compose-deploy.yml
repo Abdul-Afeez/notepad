@@ -11,7 +11,7 @@ services:
     ports:
       - 8000:8000
 
-  web:
+  note_db:
     deploy:
       restart_policy:
         condition: any
