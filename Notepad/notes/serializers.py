@@ -8,8 +8,7 @@ from Notepad.owners.models import Owner
 class NoteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Note
-        fields = ['id', 'content']
-
+        fields = ['id', 'content', 'last_updated']
     def create(self, validated_data):
         return Note(**validated_data)
 

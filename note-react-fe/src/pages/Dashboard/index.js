@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from "react";
 import "./index.css";
 import {_ApiService} from "../../services/ApiService";
-import {environment} from "../../environment";
 import {MapGlobalStateToProp} from "../../Store/MapStateToProp/MapGlobalStateToProp";
 import {MapGlobalDispatchToProp} from "../../Store/MapDispatchToProp/MapGlobalDispatchToProp";
 import {connect} from "react-redux";
@@ -158,7 +157,10 @@ export function _Dashboard(props) {
                     state.data && state.data.notes && state.data.notes.map((note, index) => <div className="note-container" key={note.id}>
                         <div className="d-flex justify-content-between">
                             <div className="note-number">{++index}</div>
-                            <div className="note-content w-100 pl-1 text-left">{note.content}</div>
+                            <div className="note-content w-100 pl-1 text-left">
+                                {note.content}
+                            </div>
+
                             <div className="note-trash justify-self-right d-flex" >
                                 <div onClick={() => markForUpdate(note)}>
                                     <i className="fa fa-edit d-inline-block mr-1" />
@@ -177,13 +179,13 @@ export function _Dashboard(props) {
                 </div>
                 <div className="d-flex justify-content-between">
                     <div>
-                        <button onClick={previous} className="btn btn-primary btn-sm">Previous</button>
+                        <button disabled={+state.currentPage === 1} onClick={previous} className="btn btn-primary btn-sm">Previous</button>
                     </div>
                     {/*<div>*/}
                     {/*    <input className="per-page" type="text"/>*/}
                     {/*</div>*/}
                     <div>
-                        <button onClick={next} className="btn btn-primary btn-sm">Next</button>
+                        <button disabled={+state.currentPage === +state.lastPage} onClick={next} className={`btn btn-primary btn-sm`}>Next</button>
                     </div>
                 </div>
             </div>
