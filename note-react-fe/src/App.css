@@ -1,0 +1,21 @@
+.main-box{
+  overflow: hidden;
+}
+.sidebar {
+  background: #e3ddd7;
+  height: 100vh;
+  max-width: 300px;
+  min-width: 250px;
+  padding: 20px;
+  overflow-y: auto;
+}
+.top-nav{
+  height: 70px;
+  width: 100%;
+  background: #9da2e6;
+}
+.body{
+  background: #f7f6f2;
+  height: calc(100vh - 70px);
+  overflow-y: auto;
+}

@@ -1,0 +1,7 @@
+.vscode
+__pycache__/
+*.pyc
+.idea/
+db.sqlite3
+venv
+note-react-fe/node_modules/

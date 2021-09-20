@@ -1,0 +1,43 @@
+.auth-box {
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+.d-cont{
+    height: 500px;
+    width: 300px;
+    overflow: hidden;
+}
+.d-cont:hover{
+    /*overflow-y: scroll;*/
+}
+.per-page{
+    width: 35px;
+    height: 35px;
+}
+.flat-right-input{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.flat-left-button{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.note-parent-container{
+    min-height: 200px;
+}
+.note-container{
+    /*background: #e3ddd7;*/
+    margin-bottom: 4px;
+    padding: 3px;
+    border-radius: 3px;
+    box-shadow: 0 0 1px rgb(58,143,252);
+}
+.note-number{
+    background: dodgerblue;
+    min-width: 20px;
+    color: #e3ddd7;
+    text-align: center;
+}
+.note-trash{
+    cursor: pointer;
+}
